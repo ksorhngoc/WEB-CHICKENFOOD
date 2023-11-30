@@ -46,9 +46,10 @@
 	$thanhtien=0;
 	while($row=$run->fetch_array()){
 		$thanhtien+=$row['tongTien'];
+    $STT = $STT+1;
   ?>
   <tr align="center">
-	<td><?php echo $STT+1 ?></td>
+	<td><?php echo $STT ?></td>
 	<td><?php echo $row['maSP'] ?></td>
 	<td><?php echo $row['tenSP'] ?></td>
 	<td><?php echo $row['soLuong'] ?></td>

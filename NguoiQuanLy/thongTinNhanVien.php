@@ -78,14 +78,19 @@
 <?php 
     include('../connect.php');
     //Lấy mã sản phẩm
-    $maSP = $_GET["ma"];
-    $macDinh = '1';
-    $sql="SELECT *FROM nhanvien WHERE ma = '$maSP' OR ma = '$macDinh' ";
+    $maNV = $_GET["ma"];
+    $sql="SELECT *FROM nhanvien WHERE ma = '$maNV' ";
 	$run=$conn->query($sql);
-    $row=$run->fetch_array()
+    $row=$run->fetch_array();
+    if(($run->num_rows) < 1 ){ ?>
+        <center><input type="text" name="tuKhoa" placeholder="Nhập mã nhân viên hoặc tên nhân viên" style="width: 250; height: 30;">
+        <button class="btnTimKiem" name="timKiemDH">Tìm kiếm</button></center>
+    <?php
+    }
+    else {
 ?>
 <body>
-    <center><input type="text" name="tuKhoa" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" style="width: 250; height: 30;">
+    <center><input type="text" name="tuKhoa" placeholder="Nhập mã nhân hoặc tên nhân viên" style="width: 250; height: 30;">
     <button class="btnTimKiem" name="timKiemDH">Tìm kiếm</button></center>
     <div id="wrapper">
     
@@ -120,7 +125,10 @@
             <div class="form-group">
                 <input type="text" class="form-input" name="luongCB" placeholder="Lương cơ bản" value="<?php echo $row['luongCB'] ?>">
             </div>
+            <button type="submit" name="SuaNV" value="" class="form-submit">Sửa</button>
+            <button type="submit" name="ThemNV" value="" class="form-submit">Thêm</button>
+            
         </form>
     </div>
-    <button type="submit" name="dangnhap" value="" class="form-submit">Đăng nhập</button>
 </body>
+<?php } ?>

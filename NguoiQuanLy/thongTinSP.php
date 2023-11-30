@@ -4,13 +4,13 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <style>
        
-#wrapper{
-    min-height: 100vh;
+       #wrapper{
+    min-height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#form-login{
+#form-thongTin{
     max-width: 400px;
     background: white;
     flex-grow: 1;
@@ -89,44 +89,80 @@
 	$run=$conn->query($sql);
     $row=$run->fetch_array();
     if(($run->num_rows) < 1 ){ ?>
-        <center><input type="text" name="tuKhoa" placeholder="Nhập mã nhân viên hoặc tên nhân viên" style="width: 250; height: 30;">
+        <center><input type="text" name="tuKhoa" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" style="width: 250; height: 30;">
         <button class="btnTimKiem" name="timKiemDH">Tìm kiếm</button></center>
     <?php
     }
     else {
 ?>
 <body>
-    <center><input type="text" name="tuKhoa" placeholder="Nhập mã nhân viên hoặc tên nhân viên" style="width: 250; height: 30;">
+
+    <div>
+    <center><input type="text" name="tuKhoa" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" style="width: 250; height: 30;">
     <button class="btnTimKiem" name="timKiemDH">Tìm kiếm</button></center>
+    </div>
     <div id="wrapper">
-    
-        <form action="" method="post" id="form-login">
+    <form action="" method="post" id="form-thongTin">
+        
             <div>
                 <img width="100%" src="../<?php echo $row['Hinh'] ?>" alt="">
             </div>
             <div class="form-group">
-                <input type="file" class="form-input" name="Ma" placeholder="Chọn file" >
+                <input type="file" class="form-input" name="hinhanh" placeholder="Chọn ảnh"/>
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="MaSP" placeholder="Mã sản phẩm" value="<?php echo $row['cartegory_id']  ?>">
+                <input type="text" class="form-input" name="MaSP" required placeholder="Mã sản phẩm" value="<?php echo $row['cartegory_id']  ?>"/>
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="tenSP" placeholder="Tên sản phẩm" value="<?php echo $row['Tensp'] ?>">
+                <input type="text" class="form-input" name="tenSP" required placeholder="Tên sản phẩm" value="<?php echo $row['Tensp'] ?>"/>
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="Gia" placeholder="giá" value="<?php echo $row['Gia'] ?>">
+                <input type="text" class="form-input" name="Gia" required placeholder="giá" value="<?php echo $row['Gia'] ?>"/>
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="MoTa" placeholder="Mô tả" value = "<?php echo $row['Mota'] ?>">
+                <textarea class="form-input" name="MoTa" required placeholder="Mô tả" value = ""><?php echo $row['Mota'] ?></textarea>
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="BaoQuan" placeholder="Bảo quản" value = "<?php echo $row['Baoquan'] ?>" >
+                <textarea class="form-input" name="BaoQuan" required placeholder="Bảo quản" value = "" ><?php echo $row['Baoquan'] ?></textarea>
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="maDanhMuc" placeholder="Mã danh mục" value = "<?php echo $row['Madanhmuc'] ?>" >
+                <input type="text" class="form-input" name="maDanhMuc" required placeholder="Mã danh mục" value = "<?php echo $row['Madanhmuc'] ?>" />
             </div>
-        </form>
+            <button type="submit" name="ThemSP" value="" class="form-submit">Thêm</button>
+            <button type="submit" name="SửaSP" value="" class="form-submit">Sửa</button>
     </div>
-    <button type="submit" name="dangnhap" value="" class="form-submit">Đăng nhập</button>
+</form>
+
 </body>
 <?php } ?>
+<?php 
+    if(isset($_POST['ThemSP'])){
+        $masp = $_POST["MaSP"];
+        $tensp = $_POST["tenSP"];
+        $giasp = $_POST["Gia"];
+        $motasp = $_POST["MoTa"];
+        $baoquan = $_POST["BaoQuan"];
+        $madanhmuc = $_POST["maDanhMuc"];
+        $anh = $_FILES['hinhanh']['name'];
+        $anh_tmp = $_FILES['hinhanh']['tmp_name'];
+        move_uploaded_file($anh_tmp,'..images/'.$anh);
+        $kiemtra = "select * from sanpham where cartegory_id = '".$masp."' OR Tensp = '".$tensp."' ";
+        $thuchien = mysqli_query($ketnoi, $kiemtra);
+        if(($run->num_rows) > 0 ){
+            echo 'Mã sản phẩm hoặc tên sản phẩm bị trùng!';
+        }
+        else{
+            $sql_sanpham = "INSERT INTO sanpham (cartegory-id, Tensp, Gia, Hinh, Mota, Baoquan, Madanhmuc) VALUES ('$masp', '$tensp','$giasp','$hanh', '$motasp', '$baoquan', '$madanhmuc')";
+            $result = $conn->query($sql_sanpham);
+			if($result){
+					echo "Thêm sản phẩm thành công";
+			}else{
+					die(mysqli_error($conn));
+			}
+        }
+    }
+    //Kiểm tra có baamsnuts xóa
+    if(isset($_POST['ThemSP'])){
+
+    }
+?>

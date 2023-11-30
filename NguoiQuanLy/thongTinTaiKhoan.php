@@ -94,7 +94,7 @@
     padding-right: 0;
     cursor: pointer;
 }
-.form-submit{
+.form-submitXacNhan{
     background: #B22222;
     border: 1px solid #f5f5f5;
     color: #fff;
@@ -104,7 +104,7 @@
     transition: 0.25s ease-in-out;
     margin-top: 30px;
 }
-.form-submit:hover{
+.form-submitXacNhan:hover{
     border: 1px solid #54a0ff;
     background: #FF3030;
 }
@@ -151,7 +151,7 @@
             </div>
             <div>
                 <input  style="float: left; " type="radio" id="NhanVienGH" name="LoaiTK" value="2"/><b>Nhân viên giao hàng</b></div>
-            <input type="submit" name="dangky" value="Xác nhận tài khoản" class="form-submit">
+            <input type="submit" name="dangky" value="Xác nhận tài khoản" class="form-submitXacNhan">
         </form>
     </div>
 </body>

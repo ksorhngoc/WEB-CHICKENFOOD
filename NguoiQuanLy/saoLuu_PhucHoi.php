@@ -7,7 +7,8 @@
 <head>
 	<meta charset="utf8">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
+    <title>Sao lưu & Phục hồi</title>
+   <style>
         .btnDonHang{
             width: 105px ; 
             height: 50px ; 
@@ -39,6 +40,16 @@
         .dangXuat:hover{
             background: #0099FF;
         }
+        .form-submit{
+            width: 300px;
+            height: 30px;
+            margin: 20px;
+            background: #C00000;
+            color: white;
+        }
+        .form-submit:hover{
+            background: #E80000;
+        }
     </style>
 </head>
 <body background="../images/background3.jpg">
@@ -63,6 +74,8 @@
             <p style="font-size: 18px; color: white"><b><?php echo $ten ?></b></p>
         </div>
         <hr>
+        <center><button class="form-submit" type="submit" name="dangTuyenDung" value="" class="form-submit">Sao lưu dữ liệu</button></center>
+        <center><button class="form-submit" type="submit" name="dangTuyenDung" value="" class="form-submit">Phục hồi</button></center>
     </div>      
 </body>
 </html>

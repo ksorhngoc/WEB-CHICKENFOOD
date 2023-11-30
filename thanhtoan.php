@@ -13,7 +13,9 @@
         for($i=0; $i< sizeof($_SESSION['giohang']); $i++){
             $tongSL +=$_SESSION['giohang'][$i][3];  
         }
-        $sql_donhang="INSERT INTO donhang (maKH, tenKH, SDT , diaChi, SoLuongSP, trangThai, tongTien, phuongThucTT) VALUES('$maKH', '$ht', '$dt', '$diachi', '$tongSL', '1', '$tongdonhang', '$pttt')";
+        $date=getdate();
+        $thoiGian = $date['year']."-".$date['mon']."-".$date['mday'];
+        $sql_donhang="INSERT INTO donhang (maKH, tenKH, SDT , diaChi, SoLuongSP, trangThai, tongTien, phuongThucTT,ThoiGian) VALUES('$maKH', '$ht', '$dt', '$diachi', '$tongSL', '1', '$tongdonhang', '$pttt','$thoiGian' )";
         $result_donhang=mysqli_query($conn, $sql_donhang);
 
         //lấy mã đon hàng vừa thêm

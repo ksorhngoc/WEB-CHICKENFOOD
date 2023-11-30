@@ -39,6 +39,16 @@
         .dangXuat:hover{
             background: #0099FF;
         }
+        .form-input{
+            margin: 10px 30px;
+        }
+        .form-submit{
+            width: 100px;
+            height: 30px;
+            margin-left : 30px;
+            background: #B22222;
+            color: white;
+        }
     </style>
 </head>
 <body background="../images/background3.jpg">
@@ -47,9 +57,8 @@
     </div>
     <center><h1 style="color: white;">HỆ THỐNG QUẢN LÝ BÁN GÀ RÁN</h1></center>
     <div class = "main" style="width: 99%; border: 2px solid white; margin: auto;">
-    
         <a href="QuanLySanPham.php?ma=0"><button class="btnDonHang" name="SanPham" id="sanPham"><b>Sản phẩm</b></button></a>
-        <a href="QuanLyNhanVien.php&ma=0"><button class="btnDonHang" id="nhanVien"><b>Nhân viên</b></button></a>
+        <a href="QuanLyNhanVien.php?ma=0"><button class="btnDonHang" id="nhanVien"><b>Nhân viên</b></button></a>
         <a href="QuanLyTaiKhoan.php?ma=0"><button class="btnDonHang" id="TaiKhoan"><b>Tài khoản</b></button></a>
         <a href="QuanLyDoanhThu.php"><button class="btnDonHang" id="doanhThu"><b>Doanh Thu</b></button></a>
         <a href="index.php?action=lichSuDonHang"><button class="btnDonHang" id="LichSuDH"><b>Lịch sử đơn hàng </b></button></a>
@@ -63,7 +72,10 @@
             <p style="font-size: 18px; color: white"><b><?php echo $ten ?></b></p>
         </div>
         <hr>
-    </div>      
+        <?php 
+                include 'DoanhThu.php' ;
+        ?>
+    </div>  
 </body>
 </html>
 
