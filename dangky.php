@@ -21,7 +21,7 @@
         if ($row = mysqli_fetch_array($thuchien) >0 )
         {
             echo"<script>
-                alert('Tài khoản đã được đăng ký');
+                alert('Tài khoản đã được đăng kí');
                 </script>";
         }
         else if ($mk1 !=$mk2)
@@ -52,7 +52,7 @@
 <body>
     <div id="wrapper">
         <form action="" method="post" id="form-login">
-            <h1 class="form-heading">Đăng Ký Tài Khoản</h1>
+            <h1 class="form-heading">Đăng Kí Tài Khoản</h1>
             <div class="form-group">
                 <input type="text" required class="form-input" name="ht" placeholder="Họ tên khách hàng">
             </div>

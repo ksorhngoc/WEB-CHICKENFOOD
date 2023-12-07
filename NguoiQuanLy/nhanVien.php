@@ -17,6 +17,17 @@
             float: right;
             margin: 30px 20px;
         }
+        .form-tinhluong{
+            background: #CC0000 ;
+            border: 1px solid #f5f5f5;
+            color: #fff;
+            width: 150px;
+            text-transform: uppercase;
+            padding: 6px 10px;
+            transition: 0.25s ease-in-out;
+            float: left;
+            margin: 30px 20px;
+        }
     </style>
 </head>
 <?php 
@@ -66,6 +77,7 @@
    	<?php } ?>
   </tr>
     </table>
+    <button type="submit" name="TinhLuong" value="" class="form-tinhluong">Tính Lương</button>
     <button type="submit" onclick="TaoMoi()" id="taomoi" name="TaoMoiNV" class="form-submit">Tạo mới</button>
     <button type="submit" name="XoaNV" value="" class="form-submit">Xóa</button>
 </form>

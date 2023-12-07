@@ -12,7 +12,7 @@
 
     
 ?>
-
+<center><h1 style="color: white"><b> DANH SÁCH ĐƠN HÀNG ĐANG GIAO</b></h1></center>
 <center><table width="90%" border="2" style="border-collapse: collapse; margin: 20px; background: #FFE4B5">
   <tr align="center" style="height: 50px; background: #FF9900" >
 	<td width="200px"><div align="center"><b>Mã đơn hàng</b></div></td>

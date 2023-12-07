@@ -86,7 +86,6 @@
                                     <?php     
                                         }
                                     ?>
-                                    <p>Xác nhận</p>
                                 </td>
                                 </tr> 
                         <?php

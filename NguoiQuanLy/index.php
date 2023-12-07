@@ -50,7 +50,7 @@
     <div class = "main" style="width: 99%; border: 2px solid white; margin: auto;">
     
         <a href="QuanLySanPham.php?ma=0"><button class="btnDonHang" name="SanPham" id="sanPham"><b>Sản phẩm</b></button></a>
-        <a href="QuanLyNhanVien.php&ma=0"><button class="btnDonHang" id="nhanVien"><b>Nhân viên</b></button></a>
+        <a href="QuanLyNhanVien.php?ma=0"><button class="btnDonHang" id="nhanVien"><b>Nhân viên</b></button></a>
         <a href="QuanLyTaiKhoan.php?ma=0"><button class="btnDonHang" id="TaiKhoan"><b>Tài khoản</b></button></a>
         <a href="QuanLyDoanhThu.php"><button class="btnDonHang" id="doanhThu"><b>Doanh Thu</b></button></a>
         <a href="index.php?action=lichSuDonHang"><button class="btnDonHang" id="LichSuDH"><b>Lịch sử đơn hàng </b></button></a>

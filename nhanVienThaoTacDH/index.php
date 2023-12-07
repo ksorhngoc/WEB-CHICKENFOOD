@@ -37,7 +37,7 @@
         <center><img src="imgs/logo.jpg"  style="width: 150px ; height: 150px ; margin: 10"></center>
     </div>
     <center><h1 style="color: white;">HỆ THỐNG QUẢN LÝ BÁN GÀ RÁN</h1></center>
-    <div class = "main" style="width: 99%; border: 2px solid white; margin: auto">
+    <div class = "main" style="width: 99%; height: AUTO; border: 2px solid white; margin: auto">
     
         <a href="index.php?action=donHangChoXacNhan"><button class="btnDonHang" id="DHChoXacNhan"><b>Đơn hàng chờ xác nhận</b></button></a>
         <a href="index.php?action=donHangChoGiao"><button class="btnDonHang" id="DHChoGiao"><b>Đơn hàng chờ giao</b></button></a>

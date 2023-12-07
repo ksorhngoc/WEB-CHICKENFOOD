@@ -2,7 +2,7 @@
 	if(isset($_GET['action'])){
 		$tam = $_GET['action'];
 	}else{
-		$tam = 'donHangChoXacNhan';
+		$tam = '';
 	}
 	if($tam == 'donHangChoXacNhan'){
 		include('timKiem.php');
